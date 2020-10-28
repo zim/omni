@@ -1,17 +1,9 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import Menu from "@material-ui/core/Menu";
-import MenuList from "@material-ui/core/MenuList";
-import MenuItem from "@material-ui/core/MenuItem";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-// import MoreIcon from "@material-ui/icons/MoreVert";
-import MenuIcon from "@material-ui/icons/Menu";
 import theme from '../theme';
 
 const useStyles = makeStyles((classes) => ({
@@ -37,38 +29,32 @@ const useStyles = makeStyles((classes) => ({
 const NavBar = () => {
     const classes = useStyles();
 
-
     return (
-  
+
         <AppBar position="static" className={classes.appBar}>
-                <Toolbar>
-                   
+            <Toolbar>
 
                 <Link href="/todolist" color="inherit" className={classes.menuItem}>
-                        <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h6" className={classes.title}>
 
-                            Todo List
-                        </Typography>
-                    </Link>
-                
+                        Todo List
+                    </Typography>
+                </Link>
+
                 <Link href="/about" color="inherit" className={classes.menuItem}>
-                        <Typography variant="h6" className={classes.title}>
-                            About
-                        </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                        About
+                    </Typography>
 
-                    </Link>
+                </Link>
                 <Link href="/grid" color="inherit" className={classes.menuItem}>
-                        <Typography variant="h6" className={classes.title}>
-                            Grid
-                        </Typography>
-                    </Link>
+                    <Typography variant="h6" className={classes.title}>
+                        Grid
+                    </Typography>
+                </Link>
 
-
-
-
-                   
-                </Toolbar>
-            </AppBar>
+            </Toolbar>
+        </AppBar>
 
     );
 };

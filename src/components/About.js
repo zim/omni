@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { Grid, Container, Box, Button, Modal, Backdrop, Fade, Typography } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 
 // cloud name dg8ckygz0
 const useStyles = makeStyles((theme) => ({

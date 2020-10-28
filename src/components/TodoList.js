@@ -4,7 +4,7 @@ import TodoForm from "./TodoForm";
 import Todo from './Todo';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { Grid, Container, Box, Button, Modal, Backdrop, Fade, Typography } from '@material-ui/core';
+import { Grid, Box, Button, Modal, Backdrop, Fade, Typography } from '@material-ui/core';
 
 // cloud name dg8ckygz0
 const useStyles = makeStyles((theme) => ({
@@ -73,55 +73,37 @@ function TodoList() {
 
     // Set localStorage on initial mount
     useEffect(() => {
-        // // console.log("use effect one");
 
         const todos = JSON.parse(localStorage.getItem('todos-omni-dev1'));
         if (todos) {
             setTodos(todos);
-            // setTodosEmptyBool(true);
         }
         
     }, []);
 
     // update localStorage on data change
     useEffect(() => {
-        console.log("use effect two");
-        // // console.log(todos.length);
 
         localStorage.setItem('todos-omni-dev1', JSON.stringify(todos));
 
-        if (todos.length == 0) {
-            console.log('if (todos.length == 0) {');
+        if (todos.length === 0) {
             setTodosEmptyBool(false);
         }  
 
     }, [todos]);
 
-    // // console.log(todos);
-
-    const [dev, setDev] = React.useState(true);
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
-        // // console.log("const handleOpen = () => {");
-
-        // // console.log(editId);
         setOpen(true);
     };
 
     const handleClose = () => {
-        // // console.log("const handleClose = () => {");
         setOpen(false);
         setEdit(null);
     };
 
-    // clsx experiment button
-    const [openClsx, setOpenClsx] = React.useState(false);
-
-    const handleOpenClsx = () => {
-        // // console.log("const handleOpenClsx = () => {");
-        setOpenClsx(!openClsx);
-    };
+   
 
     const handleToggle = (value) => () => {
 
@@ -152,7 +134,7 @@ function TodoList() {
         }
 
         // // console.log(todos.length);
-        if (todos.length == 0) {
+        if (todos.length === 0) {
             setTodosEmptyBool(!todosEmptyBool);
         }
 
@@ -194,10 +176,6 @@ function TodoList() {
         setTodos(editTodos);
         setEdit(false);
     };
-
-
-    const { foo, bar, baz } = classes;
-    const style = clsx(foo, bar, baz);
 
     const [errorFetch, setErrorFetch] = useState(false);
 
